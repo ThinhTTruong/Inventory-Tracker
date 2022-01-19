@@ -1,0 +1,55 @@
+html(lang="en")
+    head 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Inventory Tracker
+        link(rel="stylesheet", href="/css/index.css")
+        script(src="/js/index.js" defer)
+    body(onload="init()") 
+        h1 Welcome to our Inventory Tracker!
+        table.input-form
+            tr
+                th Item ID 
+                th Name 
+                th Category 
+                th Quantity 
+                th Warehouse 
+                th
+            tr
+                td
+                    input#add-itemId
+                td
+                    input#add-name
+                td
+                    input#add-category
+                td
+                    input#add-quantity
+                td
+                    input#add-warehouse
+                td
+                    button#add-button(type='submit') Add item
+        p#add-error &times; Please fill in the fields!
+        table.input-form 
+            tr
+                td
+                    input#filter-itemId
+                td
+                    input#filter-name
+                td
+                    input#filter-category
+                td
+                    input#filter-quantity
+                td
+                    input#filter-warehouse
+                td
+                    button#filter-button(type='submit') Filter
+        table#items-table
+            thead
+                th Item ID 
+                th Name 
+                th Category 
+                th Quantity 
+                th Warehouse 
+                th
+            tbody#items

@@ -1,0 +1,13 @@
+#add-error{
+    display: none;
+    color: red;
+}
+.update-button{
+    display: none;
+}
+#items-table, .input-form{
+    width: 70%;
+}
+th,td{
+    width: 16%;
+}
