@@ -7,7 +7,7 @@ router.post("/", addItem, sendResult);
 router.put("/:itemId", updateItem, sendResult);
 router.delete("/:itemId", deleteItem, sendResult);
 
-// 
+// Get items that match query
 async function getItems(req, res, next){
     let filter = Object.fromEntries(
         Object.entries(req.query).filter(([key, value]) => value !== "")
@@ -25,16 +25,19 @@ async function addItem(req, res, next){
     next();
 };
 
+// Update an item in database
 async function updateItem(req, res, next){
     req.result = await Item.findByIdAndUpdate(req.params.itemId, req.body);
     next();
 };
 
+// Delete an item in database
 async function deleteItem(req, res, next){
     req.result = await Item.findOneAndDelete(req.params.itemId);
     next();
 };
 
+// Send results after the query
 function sendResult(req, res){
     if (!req.result){
         res.status(400).send("Error");

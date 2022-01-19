@@ -1,9 +1,11 @@
+// Function that runs when the page is loaded
 function init(){
     document.getElementById("add-button").addEventListener("click", addItem);
     document.getElementById("filter-button").addEventListener("click", filterItems);
     showItems();
 }
 
+// Add an item with input fields to database
 function addItem() {
     const itemId = document.getElementById("add-itemId").value;
     const name = document.getElementById("add-name").value;
@@ -25,6 +27,7 @@ function addItem() {
     }
 }
 
+// Filter items that match input fields
 function filterItems() {
     const itemId = document.getElementById("filter-itemId").value;
     const name = document.getElementById("filter-name").value;
@@ -36,6 +39,7 @@ function filterItems() {
     Object.values(filter).forEach(field => field.value="");
 }
 
+// Get items and display on screen
 function showItems(filter) {
     let query = "";
 
@@ -50,6 +54,7 @@ function showItems(filter) {
         .catch(err => console.log(err));
 }
 
+// Display given items on screen
 function renderItems(items) {
     const fields = ['itemId', 'name', 'category', 'quantity', 'warehouse'];
     document.getElementById("items").innerHTML="";
@@ -70,12 +75,14 @@ function renderItems(items) {
     document.getElementById("items").innerHTML=result;
 }
 
+// Delete an item with given id
 function deleteItem(id){
     fetch(`/items/${id}`, {method: 'DELETE'})
         .then(() => showItems());
 
 }
 
+// Allow to edit an item with given id
 function editItem(id) {
     const item = document.getElementById(`item-${id}`);
     const itemFields = item.getElementsByTagName("input");
@@ -83,6 +90,7 @@ function editItem(id) {
     document.getElementById(`update-${id}`).style.display = "block";
 }
 
+// Update an item with given id
 function updateItem(id) {
     const item = document.getElementById(`item-${id}`);
     const itemFields = item.getElementsByTagName("input");
@@ -99,6 +107,7 @@ function updateItem(id) {
     Array.from(itemFields).forEach(field => field.readOnly = true);
 }
 
+// Clear all the add input fields
 function clearAddFields() {
     document.getElementById("add-itemId").value = "";
     document.getElementById("add-name").value = "";
