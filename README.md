@@ -15,5 +15,5 @@ npm start
 <code>GET /</code> - home page \
 <code>GET /items</code> - get items that match query \
 <code>POST /items</code> - create a new item \
-<code>PUT /items</code> - update an item \
-<code>DELETE /items</code> - delete an item 
+<code>PUT /items/:itemId</code> - update an item \
+<code>DELETE /items/:itemId</code> - delete an item 
