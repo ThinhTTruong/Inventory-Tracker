@@ -3,7 +3,7 @@
 ## Running the project
 You can clone this repository and run the project by using the following command lines:
 <code>
-git clone https://github.com/ThinhTTruong/inventory-tracker app \
+git clone https://github.com/ThinhTTruong/inventory-tracker app <br />
 cd app \
 npm i \
 mv .env.example .env \
