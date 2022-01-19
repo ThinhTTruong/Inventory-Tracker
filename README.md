@@ -2,11 +2,13 @@
 
 ## Running the project
 You can clone this repository and run the project by using the following command lines:
-<code>git clone https://github.com/ThinhTTruong/inventory-tracker app <br />
+<code>
+git clone https://github.com/ThinhTTruong/inventory-tracker app <br />
 cd app <br />
 npm i <br />
 mv .env.example .env <br />
-npm start <br /></code>
+npm start <br />
+</code>
 
 ## API Endpoints
 
